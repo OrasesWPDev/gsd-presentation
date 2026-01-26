@@ -58,22 +58,22 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TRAIN-01 | TBD | Pending |
-| TRAIN-02 | TBD | Pending |
-| TRAIN-03 | TBD | Pending |
-| TRAIN-04 | TBD | Pending |
-| TIMER-01 | TBD | Pending |
-| TIMER-02 | TBD | Pending |
-| TIMER-03 | TBD | Pending |
-| TIMER-04 | TBD | Pending |
-| TIMER-05 | TBD | Pending |
-| TIMER-06 | TBD | Pending |
+| TIMER-03 | Phase 1 | Pending |
+| TIMER-01 | Phase 2 | Pending |
+| TIMER-02 | Phase 2 | Pending |
+| TIMER-04 | Phase 2 | Pending |
+| TIMER-05 | Phase 3 | Pending |
+| TIMER-06 | Phase 3 | Pending |
+| TRAIN-01 | Phase 4 | Pending |
+| TRAIN-02 | Phase 4 | Pending |
+| TRAIN-03 | Phase 4 | Pending |
+| TRAIN-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 10 total
-- Mapped to phases: 0
-- Unmapped: 10 ⚠️
+- Mapped to phases: 10
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-26*
-*Last updated: 2026-01-26 after initial definition*
+*Last updated: 2026-01-26 after roadmap creation*
