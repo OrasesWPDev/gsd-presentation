@@ -177,48 +177,34 @@ Now you have one pane. If Claude exited, restart:
 claude --dangerously-skip-permissions
 ```
 
-### COMMAND (start Ralph Loop):
+### COMMAND (start Ralph Loop for all 3 phases):
 
 ```
-/ralph-loop:ralph-loop "/gsd:execute-phase 1" --completion-promise "PHASE_COMPLETE" --max-iterations 20
+/ralph-loop:ralph-loop "Execute GSD phases 1, 2, 3 in sequence:
+
+Phase 1: /gsd:execute-phase 1 - Timer Foundation
+Phase 2: /gsd:execute-phase 2 - Core Timer Logic
+Phase 3: /gsd:execute-phase 3 - Modes and Polish
+
+Run each phase to completion before starting the next.
+Only output PHASE_COMPLETE after phase 3 verification passes." --completion-promise "PHASE_COMPLETE" --max-iterations 50
 ```
 
-### SAY (while Phase 1 executes):
+### SAY (while phases execute):
 
-"Claude is now building the HTML structure, CSS styling, and JavaScript state. Watch the terminal - you'll see it creating files, running verifications, and committing each task.
+"I started Ralph Loop once with all three phases. Watch what happens:
 
-The GSD workflow breaks work into small, atomic tasks. Each task gets verified before moving on. If something fails, it fixes it automatically."
+**Phase 1** - Claude builds the HTML structure, CSS styling, and JavaScript state. Each task gets verified before moving on.
+
+**Phase 2** - The countdown logic. GSD chose timestamp-based counting instead of simple interval decrement because intervals drift over time.
+
+**Phase 3** - Mode switching and session counter. The timer will switch between work and break modes automatically."
 
 ### DO:
 
-- Observe Phase 1 completion
-- If Ralph Loop exits after Phase 1, run Phase 2:
-
-```
-/ralph-loop:ralph-loop "/gsd:execute-phase 2" --completion-promise "PHASE_COMPLETE" --max-iterations 20
-```
-
-### SAY (while Phase 2 executes):
-
-"Phase 2 is adding the countdown logic. This is the core - it needs to count down accurately without drift. GSD chose timestamp-based counting instead of simple interval decrement because intervals drift over time."
-
-### DO:
-
-- Observe Phase 2 completion
-- Run Phase 3:
-
-```
-/ralph-loop:ralph-loop "/gsd:execute-phase 3" --completion-promise "PHASE_COMPLETE" --max-iterations 20
-```
-
-### SAY (while Phase 3 executes):
-
-"Final phase - adding work mode, short break, and long break. The timer will automatically switch modes when one completes. We're also adding a session counter that increments after each work session."
-
-### DO:
-
-- Wait for Phase 3 completion
-- Show the terminal output showing all phases complete
+- Watch all 3 phases execute autonomously
+- Point out transitions between phases as they happen
+- Show the terminal output when all phases complete
 
 ---
 
