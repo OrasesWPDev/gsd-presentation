@@ -70,7 +70,7 @@ claude --dangerously-skip-permissions
 
 ### DO:
 
-Answer GSD questions. Questions will vary — these are examples, not exact matches.
+Answer GSD questions. Questions will vary — these are based on actual test runs.
 
 **Response strategy:** Keep answers short (under 20 words). Stick to these facts:
 - Single HTML file, no frameworks, runs in browser
@@ -80,28 +80,54 @@ Answer GSD questions. Questions will vary — these are examples, not exact matc
 
 ---
 
-**Common questions and responses:**
-
----
+**Typical question flow:**
 
 **Q: What are you building?**
 ```
 Pomodoro timer
 ```
 
-**Q: Tell me more about the Pomodoro timer**
+**Q: How will you use this? / Walk me through a work session...**
 ```
-25-min work sessions, 5-min breaks. Single HTML file. No dependencies.
+Browser tab. Open the HTML file and keep it visible while working.
 ```
+
+**Q: When a pomodoro ends, what should happen? Sound? Visual? Notification? Track sessions?**
+```
+Visual indicator only, no sound. Yes, track completed sessions with a counter.
+```
+
+**Q: Classic pomodoro or simple countdown? What does visual indicator look like?**
+```
+25 min work, 5 min break. Simple, no long break cycle. Visual indicator: timer turns green when done.
+```
+
+**[MULTIPLE CHOICE] Timer Flow — what happens when work timer ends?**
+→ Select **"Auto-start break"**
+
+**[MULTIPLE CHOICE] Pause Control**
+→ Select option that **allows pausing**
+
+**Q: What is a "session" for counting — work period or full work+break cycle?**
+```
+Work period only. Break completion doesn't count.
+```
+
+**Q: UI styling preferences?**
+```
+Minimal. Dark background, light text. Monospace timer display.
+```
+
+**Q: Ready to create PROJECT.md?**
+→ Select **"Create PROJECT.md"**
+
+---
+
+**Additional questions (if asked):**
 
 **Q: Who is this for?**
 ```
 Me. Personal productivity.
-```
-
-**Q: What does done look like?**
-```
-Timer counts down 25:00 to 00:00. Start/stop/reset. Shows completed sessions.
 ```
 
 **Q: Any constraints?**
@@ -109,41 +135,9 @@ Timer counts down 25:00 to 00:00. Start/stop/reset. Shows completed sessions.
 Single HTML file. No frameworks. Runs locally in browser.
 ```
 
-**Q: Ready to create PROJECT.md?**
-→ Select "Create PROJECT.md" option
-
----
-
-**If asked additional questions:**
-
 **Q: What tech stack?**
 ```
 Vanilla JS, HTML, CSS. No build tools.
-```
-
-**Q: Any specific design requirements?**
-```
-Minimal. Dark background, light text. Monospace timer display.
-```
-
-**Q: Should it make sounds?**
-```
-No audio. Visual only.
-```
-
-**Q: Multiple timer modes?**
-```
-Yes. 25-min work, 5-min short break.
-```
-
-**Q: Auto-start breaks?**
-```
-Yes. Timer auto-switches mode when done.
-```
-
-**Q: How will you use this? / Walk me through a work session...**
-```
-Browser tab. Open the HTML file and keep it visible while working.
 ```
 
 **Q: Any other features?**
