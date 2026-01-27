@@ -35,10 +35,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User sees start/stop button in the interface
   4. Code has state object holding timer configuration (durations, current mode)
   5. Display updates when state changes (updateDisplay function works)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] TBD during planning
+- [ ] 01-01-PLAN.md — Create timer HTML/CSS structure with state management and updateDisplay
 
 ### Phase 2: Core Timer Logic
 **Goal**: Timer counts down from 25:00 to 00:00 with user controls
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Timer Foundation | 0/? | Not started | - |
+| 1. Timer Foundation | 0/1 | Planned | - |
 | 2. Core Timer Logic | 0/? | Not started | - |
 | 3. Modes and Polish | 0/? | Not started | - |
 | 4. Training Materials | 0/? | Not started | - |
