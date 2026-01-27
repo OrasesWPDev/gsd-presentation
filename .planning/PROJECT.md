@@ -50,6 +50,39 @@ https://github.com/OrasesLabs/orases-claude-code-marketplace/blob/main/plugins/b
 - **Environment**: Google Workspace company, local execution only, no external API dependencies
 - **Reproducibility**: Must work in a fresh directory for actual demo
 
+## Demo & Development Notes
+
+**For both demo and development:** Launch Claude Code with the `--dangerously-skip-permissions` flag to avoid permission prompts that would slow down the demo or interrupt flow.
+
+```bash
+claude --dangerously-skip-permissions
+```
+
+This flag bypasses tool permission confirmations, enabling rapid execution during live demos and faster iteration during development.
+
+### Parallelization Guide
+
+**What CAN be parallelized:**
+- ✓ **Planning phases 1-3** — run `/gsd:plan-phase 1 2 3` to plan all timer phases at once
+- ✓ **Research** — researchers spawn in parallel during planning
+
+**What CANNOT be parallelized:**
+- ✗ **Execution of phases 1-3** — must run sequentially (each builds on previous)
+- ✗ **Phase 4** — needs completed timer code from phases 1-3
+
+**Why sequential execution?** All timer phases modify the same file (`pomodoro-timer/index.html`):
+- Phase 1 creates HTML + state object
+- Phase 2 adds timer functions (needs Phase 1's state)
+- Phase 3 adds mode switching (needs Phase 2's functions)
+
+**Demo execution order:**
+```
+/gsd:execute-phase 1  → wait for completion
+/gsd:execute-phase 2  → wait for completion
+/gsd:execute-phase 3  → wait for completion
+/gsd:execute-phase 4  → training materials
+```
+
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
