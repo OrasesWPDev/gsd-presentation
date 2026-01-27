@@ -65,10 +65,10 @@ Plans:
   3. Session counter increments when Pomodoro completes (reaches 00:00)
   4. Session counter displays "Pomodoros completed: X" prominently
   5. Mode switching preserves timer state (if running, keeps running with new duration)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] TBD during planning
+- [ ] 03-01-PLAN.md — Add mode switching and session counter
 
 ### Phase 4: Training Materials
 **Goal**: Presenters have everything needed to deliver the 20-minute demo
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Timer Foundation | 0/1 | Planned | - |
 | 2. Core Timer Logic | 0/1 | Planned | - |
-| 3. Modes and Polish | 0/? | Not started | - |
+| 3. Modes and Polish | 0/1 | Planned | - |
 | 4. Training Materials | 0/? | Not started | - |
