@@ -77,7 +77,38 @@
     </div>
 
     <script>
-        // JavaScript will be added in Task 2
+        // State object - plain object for simplicity
+        const timer = {
+            // Configuration (minutes)
+            durations: {
+                pomodoro: 25,
+                shortBreak: 5
+            },
+            // Runtime state
+            currentMode: 'pomodoro',
+            remainingSeconds: 25 * 60,
+            // Phase 2 will use these (include as placeholders)
+            isRunning: false,
+            intervalId: null
+        };
+
+        // DOM reference caching - at module scope for performance
+        const displayElement = document.getElementById('timer-display');
+
+        // Format time helper function
+        function formatTime(totalSeconds) {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Update display function - syncs DOM with state
+        function updateDisplay() {
+            displayElement.textContent = formatTime(timer.remainingSeconds);
+        }
+
+        // Sync display with state on page load
+        updateDisplay();
     </script>
 </body>
 </html>
