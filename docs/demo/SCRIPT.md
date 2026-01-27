@@ -137,6 +137,15 @@ Minimal. Dark background, light text. Monospace timer display.
 **[MULTIPLE CHOICE] Git Tracking**
 → Select **"Yes"**
 
+**[MULTIPLE CHOICE] Research — Spawn Plan Researcher before planning each phase?**
+→ Select **"Yes (Recommended)"**
+
+**[MULTIPLE CHOICE] Plan Check**
+→ Select **"Yes"**
+
+**[MULTIPLE CHOICE] Verifier**
+→ Select **"Yes"**
+
 ---
 
 **Additional questions (if asked):**
