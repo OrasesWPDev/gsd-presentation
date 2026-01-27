@@ -20,8 +20,8 @@ Requirements for initial demo delivery. Each maps to roadmap phases.
 - [x] **TIMER-02**: Start/stop/reset button controls
 - [x] **TIMER-03**: MM:SS display format
 - [x] **TIMER-04**: Visual completion indicator (timer reaches 00:00)
-- [ ] **TIMER-05**: 5-minute break mode
-- [ ] **TIMER-06**: Session counter showing completed pomodoros
+- [x] **TIMER-05**: 5-minute break mode
+- [x] **TIMER-06**: Session counter showing completed pomodoros
 
 ## v2 Requirements
 
@@ -62,8 +62,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TIMER-01 | Phase 2 | Complete |
 | TIMER-02 | Phase 2 | Complete |
 | TIMER-04 | Phase 2 | Complete |
-| TIMER-05 | Phase 3 | Pending |
-| TIMER-06 | Phase 3 | Pending |
+| TIMER-05 | Phase 3 | Complete |
+| TIMER-06 | Phase 3 | Complete |
 | TRAIN-01 | Phase 4 | Pending |
 | TRAIN-02 | Phase 4 | Pending |
 | TRAIN-03 | Phase 4 | Pending |
