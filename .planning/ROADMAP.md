@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Timer Foundation** - Static HTML/CSS structure, state management, and display formatting
 - [x] **Phase 2: Core Timer Logic** - Countdown mechanics with start/stop controls and completion detection
-- [ ] **Phase 3: Modes and Polish** - Break mode switching and session counter
+- [x] **Phase 3: Modes and Polish** - Break mode switching and session counter
 - [ ] **Phase 4: Training Materials** - Demo script, pre-written responses, workflow diagram, and code snippets
 
 ## Phase Details
@@ -68,7 +68,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 03-01-PLAN.md — Add mode switching and session counter
+- [x] 03-01-PLAN.md — Add mode switching and session counter
 
 ### Phase 4: Training Materials
 **Goal**: Presenters have everything needed to deliver the 20-minute demo
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Timer Foundation | 1/1 | ✓ Complete | 2026-01-26 |
 | 2. Core Timer Logic | 1/1 | ✓ Complete | 2026-01-26 |
-| 3. Modes and Polish | 0/1 | Planned | - |
+| 3. Modes and Polish | 1/1 | ✓ Complete | 2026-01-26 |
 | 4. Training Materials | 0/? | Not started | - |
