@@ -16,10 +16,10 @@ Requirements for initial demo delivery. Each maps to roadmap phases.
 
 ### Pomodoro Timer
 
-- [ ] **TIMER-01**: 25-minute countdown timer with timestamp-based logic
-- [ ] **TIMER-02**: Start/stop/reset button controls
+- [x] **TIMER-01**: 25-minute countdown timer with timestamp-based logic
+- [x] **TIMER-02**: Start/stop/reset button controls
 - [x] **TIMER-03**: MM:SS display format
-- [ ] **TIMER-04**: Visual completion indicator (timer reaches 00:00)
+- [x] **TIMER-04**: Visual completion indicator (timer reaches 00:00)
 - [ ] **TIMER-05**: 5-minute break mode
 - [ ] **TIMER-06**: Session counter showing completed pomodoros
 
@@ -59,9 +59,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | TIMER-03 | Phase 1 | Complete |
-| TIMER-01 | Phase 2 | Pending |
-| TIMER-02 | Phase 2 | Pending |
-| TIMER-04 | Phase 2 | Pending |
+| TIMER-01 | Phase 2 | Complete |
+| TIMER-02 | Phase 2 | Complete |
+| TIMER-04 | Phase 2 | Complete |
 | TIMER-05 | Phase 3 | Pending |
 | TIMER-06 | Phase 3 | Pending |
 | TRAIN-01 | Phase 4 | Pending |
