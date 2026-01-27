@@ -148,6 +148,13 @@ Minimal. Dark background, light text. Monospace timer display.
 
 ---
 
+**After config, GSD asks about domain research:**
+
+**[MULTIPLE CHOICE] Research — Research the domain ecosystem before defining requirements?**
+→ Select **"Skip research"** — saves time, Pomodoro timer is a simple domain
+
+---
+
 **Additional questions (if asked):**
 
 **Q: Who is this for?**
