@@ -1,1 +1,5 @@
 .planning/intel/
+
+# Demo presentation folders (test runs and live)
+present-test-*/
+present-live/
