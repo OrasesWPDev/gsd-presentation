@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Timer Foundation** - Static HTML/CSS structure, state management, and display formatting
 - [x] **Phase 2: Core Timer Logic** - Countdown mechanics with start/stop controls and completion detection
 - [x] **Phase 3: Modes and Polish** - Break mode switching and session counter
-- [ ] **Phase 4: Training Materials** - Demo script, pre-written responses, workflow diagram, and code snippets
+- [ ] **Phase 4: Training Materials** - Demo script, pre-written responses, and GSD workflow diagram
 
 ## Phase Details
 
@@ -72,17 +72,16 @@ Plans:
 
 ### Phase 4: Training Materials
 **Goal**: Presenters have everything needed to deliver the 20-minute demo
-**Depends on**: Phase 3 (needs completed timer code for snippets)
-**Requirements**: TRAIN-01, TRAIN-02, TRAIN-03, TRAIN-04
+**Depends on**: Phase 3 (needs completed timer code)
+**Requirements**: TRAIN-01, TRAIN-02, TRAIN-03
 **Success Criteria** (what must be TRUE):
-  1. Demo script exists with time budgets totaling 20 minutes (intro, questioning, planning, coding, wrap)
-  2. Pre-written GSD responses are copy-paste ready for each workflow phase
-  3. Visual workflow diagram exists showing Pomodoro timer architecture and data flow
-  4. Code snippets are tested and ready to paste during live demo
-**Plans**: TBD
+  1. Demo script exists with time budgets totaling 20 minutes (intro, questioning, planning, execution, wrap)
+  2. Pre-written GSD responses are copy-paste ready for questioning phase
+  3. Visual workflow diagram exists showing GSD stages (Questioning, Planning, Execution, Verification)
+**Plans**: 1 plan
 
 Plans:
-- [ ] TBD during planning
+- [ ] 04-01-PLAN.md — Create demo script, pre-written responses, and GSD workflow diagram
 
 ## Progress
 
@@ -94,4 +93,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Timer Foundation | 1/1 | ✓ Complete | 2026-01-26 |
 | 2. Core Timer Logic | 1/1 | ✓ Complete | 2026-01-26 |
 | 3. Modes and Polish | 1/1 | ✓ Complete | 2026-01-26 |
-| 4. Training Materials | 0/? | Not started | - |
+| 4. Training Materials | 0/1 | Not started | - |
