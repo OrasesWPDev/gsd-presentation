@@ -9,9 +9,9 @@ Requirements for initial demo delivery. Each maps to roadmap phases.
 
 ### Training Materials
 
-- [ ] **TRAIN-01**: Demo script with time budgets for 20-min presentation
-- [ ] **TRAIN-02**: Pre-written responses for GSD questioning phase (copy-paste ready)
-- [ ] **TRAIN-03**: Visual workflow diagram of Pomodoro timer (using BA skill)
+- [x] **TRAIN-01**: Demo script with time budgets for 20-min presentation
+- [x] **TRAIN-02**: Pre-written responses for GSD questioning phase (copy-paste ready)
+- [x] **TRAIN-03**: Visual workflow diagram of GSD workflow (Mermaid flowchart)
 - [ ] **TRAIN-04**: Copy-paste code snippets (tested and ready for live demo)
 
 ### Pomodoro Timer
@@ -64,9 +64,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TIMER-04 | Phase 2 | Complete |
 | TIMER-05 | Phase 3 | Complete |
 | TIMER-06 | Phase 3 | Complete |
-| TRAIN-01 | Phase 4 | Pending |
-| TRAIN-02 | Phase 4 | Pending |
-| TRAIN-03 | Phase 4 | Pending |
+| TRAIN-01 | Phase 4 | Complete |
+| TRAIN-02 | Phase 4 | Complete |
+| TRAIN-03 | Phase 4 | Complete |
 | TRAIN-04 | Phase 4 | Pending |
 
 **Coverage:**
@@ -76,4 +76,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-26*
-*Last updated: 2026-01-26 after roadmap creation*
+*Last updated: 2026-01-27 after phase 4 completion*

@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Timer Foundation** - Static HTML/CSS structure, state management, and display formatting
 - [x] **Phase 2: Core Timer Logic** - Countdown mechanics with start/stop controls and completion detection
 - [x] **Phase 3: Modes and Polish** - Break mode switching and session counter
-- [ ] **Phase 4: Training Materials** - Demo script, pre-written responses, and GSD workflow diagram
+- [x] **Phase 4: Training Materials** - Demo script, pre-written responses, and GSD workflow diagram
 
 ## Phase Details
 
@@ -81,7 +81,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01-PLAN.md — Create demo script, pre-written responses, and GSD workflow diagram
+- [x] 04-01-PLAN.md — Create demo script, pre-written responses, and GSD workflow diagram
 
 ## Progress
 
@@ -93,4 +93,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Timer Foundation | 1/1 | ✓ Complete | 2026-01-26 |
 | 2. Core Timer Logic | 1/1 | ✓ Complete | 2026-01-26 |
 | 3. Modes and Polish | 1/1 | ✓ Complete | 2026-01-26 |
-| 4. Training Materials | 0/1 | Not started | - |
+| 4. Training Materials | 1/1 | ✓ Complete | 2026-01-27 |
