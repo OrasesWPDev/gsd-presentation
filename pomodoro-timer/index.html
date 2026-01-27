@@ -56,7 +56,13 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .mode-btn {
+            opacity: 0.7;
+        }
+
         .mode-btn.active {
+            opacity: 1;
+            font-weight: bold;
             background: var(--primary-color);
             border-color: var(--primary-color);
         }
@@ -75,8 +81,8 @@
 <body>
     <div class="timer-container">
         <div class="mode-buttons">
-            <button id="btn-pomodoro" class="mode-btn active">Pomodoro</button>
-            <button id="btn-short-break" class="mode-btn">Short Break</button>
+            <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+            <button class="mode-btn" data-mode="shortBreak">Short Break</button>
         </div>
 
         <div id="timer-display" class="timer-display">25:00</div>
@@ -90,13 +96,11 @@
     <script>
         // State object - plain object for simplicity
         const timer = {
-            // Configuration (minutes)
-            durations: {
-                pomodoro: 25,
-                shortBreak: 5
-            },
+            // Mode durations in seconds (property names match mode strings)
+            pomodoro: 25 * 60,      // 1500 seconds
+            shortBreak: 5 * 60,     // 300 seconds
             // Runtime state
-            currentMode: 'pomodoro',
+            mode: 'pomodoro',       // 'pomodoro' | 'shortBreak'
             remainingSeconds: 25 * 60,
             // Phase 2 timer control state
             isRunning: false,
@@ -161,7 +165,7 @@
         // Reset timer - return to mode duration
         function resetTimer() {
             stopTimer();
-            timer.remainingSeconds = timer.durations[timer.currentMode] * 60;
+            timer.remainingSeconds = timer[timer.mode];  // Dynamic property lookup
             timer.endTime = null;
             displayElement.classList.remove('complete');
             updateDisplay();
@@ -173,6 +177,40 @@
             timer.remainingSeconds = 0;
             updateDisplay();
             displayElement.classList.add('complete');
+        }
+
+        // Switch mode function - handles running state preservation
+        function switchMode(mode) {
+            // Check if timer was running
+            const wasRunning = timer.intervalId !== null;
+
+            // Stop timer if running
+            if (wasRunning) {
+                stopTimer();
+            }
+
+            // Update mode and remaining time
+            timer.mode = mode;
+            timer.remainingSeconds = timer[mode];  // Dynamic property lookup
+
+            // Update mode button UI
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.mode === mode) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Remove completion state when switching modes
+            displayElement.classList.remove('complete');
+
+            // Update display
+            updateDisplay();
+
+            // If was running, continue with new duration
+            if (wasRunning) {
+                startTimer();
+            }
         }
 
         // Update start/stop button text
@@ -195,6 +233,13 @@
         // Reset button
         document.getElementById('btn-reset').addEventListener('click', () => {
             resetTimer();
+        });
+
+        // Mode buttons - use data-mode attribute for switching
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchMode(btn.dataset.mode);
+            });
         });
 
         // Sync display with state on page load
