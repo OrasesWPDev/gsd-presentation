@@ -299,5 +299,4 @@ Questions?"
 
 ## Files Reference
 
-- [RESPONSES.md](./RESPONSES.md) - Pre-written answers for GSD questioning
-- [GSD-WORKFLOW.md](./GSD-WORKFLOW.md) - Mermaid diagram of GSD stages
+- [GSD-WORKFLOW.md](./GSD-WORKFLOW.md) - Mermaid diagram of GSD stages (for Section 1 visual)
