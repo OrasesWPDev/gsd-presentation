@@ -219,7 +219,7 @@ Only output PHASE_COMPLETE after phase 3 verification passes." --completion-prom
 ### COMMAND:
 
 ```bash
-open ~/projects/gsd-training/index.html
+open ~/projects/gsd-training/pomodoro-timer/index.html
 ```
 
 ### DO:
