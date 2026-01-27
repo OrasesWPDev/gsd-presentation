@@ -70,7 +70,26 @@ claude --dangerously-skip-permissions
 
 ### DO:
 
-Answer GSD questions using pre-written responses. See [RESPONSES.md](./RESPONSES.md) for exact answers.
+Answer GSD questions using these pre-written responses (copy-paste exactly):
+
+| Question | Response |
+|----------|----------|
+| What are you building? | `Pomodoro timer` |
+| Tell me more about the Pomodoro timer | `25-min work sessions, 5-min breaks. Single HTML file. No dependencies.` |
+| Who is this for? | `Me. Personal productivity.` |
+| What does done look like? | `Timer counts down 25:00 to 00:00. Start/stop/reset. Shows completed sessions.` |
+| Any constraints? | `Single HTML file. No frameworks. Runs locally in browser.` |
+| Ready to create PROJECT.md? | Select "Create PROJECT.md" |
+
+**If asked additional questions:**
+
+| Question | Response |
+|----------|----------|
+| What tech stack? | `Vanilla JS, HTML, CSS. No build tools.` |
+| Any specific design requirements? | `Minimal. Dark background, light text. Monospace timer display.` |
+| Should it make sounds? | `No audio. Visual only.` |
+| Multiple timer modes? | `Yes. 25-min work, 5-min short break.` |
+| Auto-start breaks? | `Yes. Timer auto-switches mode when done.` |
 
 Keep responses terse. GSD does the explaining, you just answer.
 
