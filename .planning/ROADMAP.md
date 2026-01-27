@@ -50,10 +50,10 @@ Plans:
   3. User clicks Reset and timer returns to 25:00
   4. Timer uses timestamp-based calculation (no drift over 25 minutes)
   5. Timer reaches 00:00 and shows completion state clearly
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] TBD during planning
+- [ ] 02-01-PLAN.md — Implement countdown logic and controls with completion detection
 
 ### Phase 3: Modes and Polish
 **Goal**: Users can switch between work and break modes with session tracking
@@ -92,6 +92,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Timer Foundation | 0/1 | Planned | - |
-| 2. Core Timer Logic | 0/? | Not started | - |
+| 2. Core Timer Logic | 0/1 | Planned | - |
 | 3. Modes and Polish | 0/? | Not started | - |
 | 4. Training Materials | 0/? | Not started | - |
