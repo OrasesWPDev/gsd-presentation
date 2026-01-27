@@ -123,6 +123,22 @@ Minimal. Dark background, light text. Monospace timer display.
 
 ---
 
+**GSD Configuration (after PROJECT.md created):**
+
+**[MULTIPLE CHOICE] Mode — How do you want to work?**
+→ Select **"YOLO (Recommended)"** — auto-approve, just execute
+
+**[MULTIPLE CHOICE] Depth**
+→ Select **"Quick"**
+
+**[MULTIPLE CHOICE] Execution**
+→ Select **"Parallel"**
+
+**[MULTIPLE CHOICE] Git Tracking**
+→ Select **"Yes"**
+
+---
+
 **Additional questions (if asked):**
 
 **Q: Who is this for?**
