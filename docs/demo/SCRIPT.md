@@ -70,7 +70,17 @@ claude --dangerously-skip-permissions
 
 ### DO:
 
-Answer GSD questions using these pre-written responses (copy-paste exactly):
+Answer GSD questions. Questions will vary — these are examples, not exact matches.
+
+**Response strategy:** Keep answers short (under 20 words). Stick to these facts:
+- Single HTML file, no frameworks, runs in browser
+- 25-min work, 5-min breaks
+- Start/stop/reset controls, session counter
+- Personal productivity tool
+
+---
+
+**Common questions and responses:**
 
 ---
 
@@ -131,9 +141,19 @@ Yes. 25-min work, 5-min short break.
 Yes. Timer auto-switches mode when done.
 ```
 
+**Q: How will you use this? / Walk me through a work session...**
+```
+Browser tab. Open the HTML file and keep it visible while working.
+```
+
+**Q: Any other features?**
+```
+No. Keep it minimal.
+```
+
 ---
 
-Keep responses terse. GSD does the explaining, you just answer.
+**For any unexpected question:** Answer in under 20 words, stay within the project scope above.
 
 ### SAY (after PROJECT.md created):
 
