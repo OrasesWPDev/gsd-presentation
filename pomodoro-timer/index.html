@@ -87,9 +87,10 @@
             // Runtime state
             currentMode: 'pomodoro',
             remainingSeconds: 25 * 60,
-            // Phase 2 will use these (include as placeholders)
+            // Phase 2 timer control state
             isRunning: false,
-            intervalId: null
+            intervalId: null,
+            endTime: null
         };
 
         // DOM reference caching - at module scope for performance
@@ -105,6 +106,68 @@
         // Update display function - syncs DOM with state
         function updateDisplay() {
             displayElement.textContent = formatTime(timer.remainingSeconds);
+        }
+
+        // Timer control functions
+
+        // Start timer - timestamp-based countdown for accuracy
+        function startTimer() {
+            // Prevent duplicate intervals
+            if (timer.intervalId !== null) return;
+
+            // Calculate end time based on remaining seconds
+            timer.endTime = Date.now() + (timer.remainingSeconds * 1000);
+            timer.isRunning = true;
+
+            // Create interval that recalculates from timestamp
+            timer.intervalId = setInterval(() => {
+                // Calculate remaining time from end timestamp
+                const remainingMs = Math.max(0, timer.endTime - Date.now());
+                timer.remainingSeconds = Math.floor(remainingMs / 1000);
+
+                // Update display
+                updateDisplay();
+
+                // Check for completion
+                if (remainingMs <= 0) {
+                    handleComplete();
+                }
+            }, 1000);
+
+            updateStartStopButton();
+        }
+
+        // Stop timer - clean interval cleanup
+        function stopTimer() {
+            if (timer.intervalId !== null) {
+                clearInterval(timer.intervalId);
+                timer.intervalId = null;
+            }
+            timer.isRunning = false;
+            updateStartStopButton();
+        }
+
+        // Reset timer - return to mode duration
+        function resetTimer() {
+            stopTimer();
+            timer.remainingSeconds = timer.durations[timer.currentMode] * 60;
+            timer.endTime = null;
+            displayElement.classList.remove('complete');
+            updateDisplay();
+        }
+
+        // Handle completion - visual indicator
+        function handleComplete() {
+            stopTimer();
+            timer.remainingSeconds = 0;
+            updateDisplay();
+            displayElement.classList.add('complete');
+        }
+
+        // Update start/stop button text
+        function updateStartStopButton() {
+            const btnStartStop = document.getElementById('btn-start-stop');
+            btnStartStop.textContent = timer.isRunning ? 'Stop' : 'Start';
         }
 
         // Sync display with state on page load
