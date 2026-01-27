@@ -60,6 +60,16 @@
             background: var(--primary-color);
             border-color: var(--primary-color);
         }
+
+        .timer-display.complete {
+            color: #27ae60;  /* Green for success */
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body>
@@ -73,6 +83,7 @@
 
         <div class="control-buttons">
             <button id="btn-start-stop">Start</button>
+            <button id="btn-reset" class="control-btn">Reset</button>
         </div>
     </div>
 
@@ -169,6 +180,22 @@
             const btnStartStop = document.getElementById('btn-start-stop');
             btnStartStop.textContent = timer.isRunning ? 'Stop' : 'Start';
         }
+
+        // Event listeners
+
+        // Start/Stop toggle button
+        document.getElementById('btn-start-stop').addEventListener('click', () => {
+            if (timer.isRunning) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        });
+
+        // Reset button
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            resetTimer();
+        });
 
         // Sync display with state on page load
         updateDisplay();
