@@ -11,6 +11,8 @@ During `/gsd:new-project`, GSD will ask questions to understand your project. Th
 
 Keep answers short. GSD will elaborate and ask follow-ups.
 
+**Demo Note:** We use 30-second timers so the audience can see the session counter increment live.
+
 ---
 
 ## Responses
@@ -19,13 +21,13 @@ Keep answers short. GSD will elaborate and ask follow-ups.
 A: "Pomodoro timer"
 
 **Q: Tell me more about the Pomodoro timer**
-A: "25-min work sessions, 5-min breaks. Single HTML file. No dependencies."
+A: "30-second work sessions, 10-second breaks for demo purposes. Single HTML file. No dependencies. Start, stop, and reset buttons."
 
 **Q: Who is this for?**
-A: "Me. Personal productivity."
+A: "Demo. Showing GSD workflow to colleagues."
 
 **Q: What does done look like?**
-A: "Timer counts down 25:00 to 00:00. Start/stop/reset. Shows completed sessions."
+A: "Timer counts down from 30 seconds. Start/stop/reset buttons. Session counter increments when work timer completes."
 
 **Q: Any constraints?**
 A: "Single HTML file. No frameworks. Runs locally in browser."
@@ -47,10 +49,13 @@ A: "Minimal. Dark background, light text. Monospace timer display."
 A: "No audio. Visual only."
 
 **Q: Multiple timer modes?**
-A: "Yes. 25-min work, 5-min short break, 15-min long break."
+A: "Yes. 30-second work, 10-second break. Short times for demo."
 
 **Q: Auto-start breaks?**
-A: "Yes. Timer auto-switches mode when done."
+A: "No. Manual control. User clicks to start each timer."
+
+**Q: What buttons/controls?**
+A: "Start, Stop, and Reset. Plus mode buttons for Work and Break."
 
 ---
 

@@ -11,15 +11,12 @@
 Before the demo, ensure the following are ready:
 
 ```bash
-# 1. Clean project directory
-cd ~/projects/gsd-training
-rm -rf .planning src index.html 2>/dev/null
+# 1. Clean project directory (or create fresh one)
+cd ~/projects/gsd-training/present-live
+rm -rf .planning index.html 2>/dev/null
 
 # 2. Verify Claude Code is installed
 claude --version
-
-# 3. Verify tmux is available
-tmux -V
 ```
 
 ---
@@ -30,20 +27,23 @@ tmux -V
 
 ### SAY:
 
-"Today I'm going to build a Pomodoro timer from scratch using the GSD workflow. GSD stands for Get Shit Done - it's a structured approach that uses Claude to handle planning and execution automatically.
+"Today I'm going to build a Pomodoro timer from scratch using the GSD workflow.
+
+**What is GSD?** It's a lightweight and powerful meta-prompting, context engineering, and spec-driven development system for Claude Code. It helps solve context rot — the quality degradation that happens as Claude fills its context window.
+
+GSD keeps Claude focused by breaking work into documented phases with clear handoffs.
 
 By the end of this 20-minute demo, we'll have a working timer with:
-- 25-minute work sessions
-- 5-minute breaks
-- Start, stop, and reset controls
-- Session counter
+- 30-second work sessions (short so you can see it complete)
+- Start, Stop, and Reset buttons
+- Session counter that increments when work completes
 
 I won't be writing code. Claude does that. My job is to answer questions and watch it work."
 
 ### DO:
 
 - Show the GSD workflow diagram (see [GSD-WORKFLOW.md](./GSD-WORKFLOW.md))
-- Point out the stages: Questioning, Research, Planning, Execution, Verification
+- Point out the stages: Questioning, Planning, Execution (we'll skip Research & Verification for speed)
 
 ---
 
@@ -74,9 +74,9 @@ Answer GSD questions. Questions will vary — these are based on actual test run
 
 **Response strategy:** Keep answers short (under 20 words). Stick to these facts:
 - Single HTML file, no frameworks, runs in browser
-- 25-min work, 5-min breaks
-- Start/stop/reset controls, session counter
-- Personal productivity tool
+- 30-second work, 10-second breaks (short times for demo visibility)
+- Start/Stop/Reset buttons, session counter
+- Demo tool to show GSD workflow
 
 ---
 
@@ -89,7 +89,7 @@ Pomodoro timer
 
 **Q: How will you use this? / Walk me through a work session...**
 ```
-Browser tab. Open the HTML file and keep it visible while working.
+Demo for colleagues. Short 30-second timers so audience can see it complete.
 ```
 
 **Q: When a pomodoro ends, what should happen? Sound? Visual? Notification? Track sessions?**
@@ -99,14 +99,19 @@ Visual indicator only, no sound. Yes, track completed sessions with a counter.
 
 **Q: Classic pomodoro or simple countdown? What does visual indicator look like?**
 ```
-25 min work, 5 min break. Simple, no long break cycle. Visual indicator: timer turns green when done.
+30-second work, 10-second break. Short for demo. Timer turns green when done.
+```
+
+**Q: What controls/buttons?**
+```
+Start, Stop, and Reset buttons. Plus mode buttons for Work and Break.
 ```
 
 **[MULTIPLE CHOICE] Timer Flow — what happens when work timer ends?**
-→ Select **"Auto-start break"**
+→ Select **"Manual control"** — user clicks to start break
 
 **[MULTIPLE CHOICE] Pause Control**
-→ Select option that **allows pausing**
+→ Select option that **allows pausing** (Stop button)
 
 **Q: What is a "session" for counting — work period or full work+break cycle?**
 ```
@@ -138,13 +143,13 @@ Minimal. Dark background, light text. Monospace timer display.
 → Select **"Yes"**
 
 **[MULTIPLE CHOICE] Research — Spawn Plan Researcher before planning each phase?**
-→ Select **"Yes (Recommended)"**
+→ Select **"No"** — simple project, skip for speed
 
 **[MULTIPLE CHOICE] Plan Check**
-→ Select **"Yes"**
+→ Select **"No"** — skip for speed
 
 **[MULTIPLE CHOICE] Verifier**
-→ Select **"Yes"**
+→ Select **"No"** — skip for speed
 
 ---
 
@@ -193,67 +198,26 @@ No. Keep it minimal.
 
 ### SAY:
 
-"Now watch this. GSD breaks the project into phases. Instead of planning them one at a time, we'll run three Claude instances in parallel. Each one will plan a different phase simultaneously."
+"Now watch this. GSD breaks the project into phases. Instead of planning them one at a time, I'll tell it to plan all three in parallel."
 
-### COMMAND (tmux setup):
+### COMMAND (in same Claude session):
 
-```bash
-SESSION="gsd-demo"
-PROJECT_DIR="$HOME/projects/gsd-training"
-tmux kill-session -t $SESSION 2>/dev/null
-tmux new-session -d -s $SESSION -c "$PROJECT_DIR"
-tmux split-window -h -t $SESSION -c "$PROJECT_DIR"
-tmux split-window -h -t $SESSION -c "$PROJECT_DIR"
-tmux select-layout -t $SESSION even-horizontal
-tmux attach -t $SESSION
+```
+/gsd:plan-phase 1 2 3 in parallel
 ```
 
-### COMMAND (start Claude in each pane):
-
-**Pane 0 (left):**
-```bash
-tmux send-keys -t gsd-demo:0.0 'claude --dangerously-skip-permissions' Enter
-```
-
-**Pane 1 (middle):**
-```bash
-tmux send-keys -t gsd-demo:0.1 'claude --dangerously-skip-permissions' Enter
-```
-
-**Pane 2 (right):**
-```bash
-tmux send-keys -t gsd-demo:0.2 'claude --dangerously-skip-permissions' Enter
-```
-
-### COMMAND (send planning commands):
-
-Wait for all 3 Claude instances to load, then:
-
-**Pane 0:**
-```bash
-tmux send-keys -t gsd-demo:0.0 '/gsd:plan-phase 1' Enter
-```
-
-**Pane 1:**
-```bash
-tmux send-keys -t gsd-demo:0.1 '/gsd:plan-phase 2' Enter
-```
-
-**Pane 2:**
-```bash
-tmux send-keys -t gsd-demo:0.2 '/gsd:plan-phase 3' Enter
-```
+GSD will spawn 3 planner agents simultaneously - one for each phase.
 
 ### SAY (while planning runs):
 
-"Each pane is planning a different phase. Phase 1 is the timer foundation - HTML, CSS, state structure. Phase 2 is the core timer logic - countdown, start/stop. Phase 3 adds modes - work, short break, long break.
+"GSD spawned 3 planner agents - one for each phase. They're all working simultaneously. Phase 1 is the timer foundation. Phase 2 is the countdown logic. Phase 3 adds session tracking.
 
-Sequential planning would take about 3 minutes. Parallel planning finishes in about 1 minute."
+We skipped research and verification in config to keep it fast."
 
 ### DO:
 
-- Watch all 3 panes complete
-- Point out the PLAN.md files created in each phase directory
+- Watch the 3 planners complete
+- Point out when each PLAN.md is created
 
 ### SAY (after all complete):
 
@@ -269,33 +233,15 @@ Sequential planning would take about 3 minutes. Parallel planning finishes in ab
 
 "This is where it gets interesting. I'm going to use Ralph Loop to run all phases autonomously. Ralph Loop keeps Claude executing until the work is done - I don't have to keep prompting it."
 
-### COMMAND (close extra panes):
+### COMMAND (start Ralph Loop):
 
-Press `Ctrl+B` then type `:kill-pane` in panes 1 and 2, or:
-
-```bash
-tmux kill-pane -t gsd-demo:0.2
-tmux kill-pane -t gsd-demo:0.1
-```
-
-Now you have one pane. If Claude exited, restart:
-
-```bash
-claude --dangerously-skip-permissions
-```
-
-### COMMAND (start Ralph Loop for all 3 phases):
+After planning completes, `/clear` then run:
 
 ```
-/ralph-loop:ralph-loop "Execute GSD phases 1, 2, 3 in sequence:
-
-Phase 1: /gsd:execute-phase 1 - Timer Foundation
-Phase 2: /gsd:execute-phase 2 - Core Timer Logic
-Phase 3: /gsd:execute-phase 3 - Modes and Polish
-
-Run each phase to completion before starting the next.
-Only output PHASE_COMPLETE after phase 3 verification passes." --completion-promise "PHASE_COMPLETE" --max-iterations 50
+/ralph-loop:ralph-loop "Execute GSD workflow for phases 1, 2, 3 sequentially. For each phase: /gsd:execute-phase. Complete each phase fully before moving to next. Output PHASES_COMPLETE when all 3 phases done." --max-iterations 50 --completion-promise "PHASES_COMPLETE"
 ```
+
+Ralph Loop will iterate through all 3 phases autonomously - executing each phase in order until completion.
 
 ### SAY (while phases execute):
 
@@ -326,28 +272,31 @@ Only output PHASE_COMPLETE after phase 3 verification passes." --completion-prom
 ### COMMAND:
 
 ```bash
-open ./pomodoro-timer/index.html
+open ./index.html
 ```
 
 ### DO:
 
-- Click Start - timer counts down
+- Click Start - timer counts down from 0:30
 - Click Stop - timer pauses
-- Click Reset - timer resets to 25:00
-- Let it run to completion (or set shorter times for demo)
-- Show mode switching
+- Click Reset - timer resets to 0:30
+- **Let it run to 0:00** - show session counter increment (only 30 seconds!)
+- Click Break mode, start it, show mode switching
 
 ### SAY:
 
-"In 20 minutes, we went from zero to a working Pomodoro timer. I answered 5 questions. Claude wrote all the code, ran all the tests, and committed everything.
+In 20 minutes, we went from zero to a working Pomodoro timer. I answered a few questions. Claude wrote all the code and committed everything.
+
+You just saw the session counter increment — that's why we used 30-second timers. In a real Pomodoro app, you'd use 25 minutes.
 
 This is the GSD workflow:
 1. **Questioning** - Capture requirements through conversation
 2. **Planning** - Break work into phases and tasks (we ran 3 planners in parallel)
-3. **Execution** - Claude executes each task, verifies it, commits it
-4. **Verification** - Each phase has success criteria that must pass
+3. **Execution** - Claude executes each task and commits it
 
-The key insight: I didn't write code. I answered questions and watched Claude work. This is what AI-assisted development looks like in 2025."
+For this demo we skipped research and verification to save time. In a real project, those add quality gates.
+
+The key insight: I didn't write code. I answered questions and watched Claude work. GSD solved context rot by documenting everything in .planning/ files — Claude could `/clear` and resume without losing track.
 
 ### DO:
 
@@ -368,8 +317,7 @@ Questions?"
 ### If time runs short:
 
 1. **Section 2 (Questioning)** is [CUT-SAFE] - can skip if PROJECT.md pre-exists
-2. **Section 3 (Parallel Planning)** can show just 1 pane instead of 3
-3. **Section 4 (Execution)** - can pre-execute Phase 1, show only Phase 2 and 3 live
+2. **Section 4 (Execution)** - can pre-execute Phase 1, show only Phase 2 and 3 live
 
 ### If something fails:
 
@@ -379,9 +327,9 @@ Questions?"
 
 ### Common issues:
 
-1. **tmux not found:** `brew install tmux`
-2. **Claude permissions:** Use `--dangerously-skip-permissions` flag
-3. **Phase fails:** Check .planning/phases/XX/PLAN.md for task status
+1. **Claude permissions:** Use `--dangerously-skip-permissions` flag
+2. **Phase fails:** Check .planning/phases/XX/PLAN.md for task status
+3. **Ralph Loop stuck:** Press Escape, then retry with `/gsd:execute-phase 1` manually
 
 ---
 
